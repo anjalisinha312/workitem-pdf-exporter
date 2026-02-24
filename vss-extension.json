@@ -1,0 +1,113 @@
+{
+  "manifestVersion": 1,
+  "id": "workitem-pdf-exporter",
+  "name": "Work Item Exporter - PDF & Bulk Export",
+  "version": "1.2.4",
+  "publisher": "ExtCode",
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "description": "Export Azure DevOps work items to PDF - single items or bulk export with all fields, comments, and history",
+  "categories": ["Azure Boards"],
+  "tags": [
+    "workitems",
+    "export",
+    "pdf",
+    "bulk",
+    "boards",
+    "reporting",
+    "documentation",
+    "backup"
+  ],
+  "icons": {
+    "default": "images/logo.png"
+  },
+  "screenshots": [
+    {
+      "path": "images/screenshot1.png"
+    },
+    {
+      "path": "images/screenshot2.png"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "README.md"
+    },
+    "license": {
+      "path": "LICENSE.txt"
+    },
+    "privacypolicy": {
+      "path": "PRIVACY.md"
+    }
+  },
+  "links": {
+    "support": {
+      "uri": "https://github.com/YOUR-USERNAME/workitem-exporter/issues"
+    },
+    "repository": {
+      "uri": "https://github.com/YOUR-USERNAME/workitem-exporter"
+    },
+    "learn": {
+      "uri": "https://github.com/YOUR-USERNAME/workitem-exporter#readme"
+    },
+    "privacypolicy": {
+      "uri": "https://github.com/YOUR-USERNAME/workitem-exporter/blob/main/PRIVACY.md"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "uri": "https://github.com/YOUR-USERNAME/workitem-exporter"
+  },
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "images",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "export-workitem-menu",
+      "type": "ms.vss-web.action",
+      "description": "Export work item to PDF",
+      "targets": [
+        "ms.vss-work-web.work-item-context-menu"
+      ],
+      "properties": {
+        "text": "Export to PDF",
+        "title": "Export this work item to PDF with all fields",
+        "icon": "images/logo.png",
+        "group": "actions",
+        "uri": "dist/menu-action.html",
+        "registeredObjectId": "export-workitem-menu"
+      }
+    },
+    {
+      "id": "bulk-export-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [
+        "ms.vss-work-web.work-hub-group"
+      ],
+      "properties": {
+        "name": "Bulk Export",
+        "uri": "dist/bulk-export.html",
+        "icon": "images/logo.png",
+        "order": 99,
+        "description": "Export multiple work items to PDF"
+      }
+    }
+  ],
+  "scopes": [
+    "vso.work",
+    "vso.work_write"
+  ],
+  "galleryFlags": [
+    "Public"
+  ]
+}
